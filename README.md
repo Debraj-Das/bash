@@ -1,5 +1,4 @@
 # This is a bash configuration reprojectory
-## setup the bash configuration
 1.In Home directory, if .config directory doesn't exist, create it. Go to the .config folder
 ```bash
 cd ~/.config
