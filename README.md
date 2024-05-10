@@ -1,7 +1,16 @@
 # How to set up the bash configuration
 
-1. import the bash reprojectory put it in .config folder
-2. add the following line to the .bashrc file
+1. Go to .config directory
+```bash 
+cd ~/.config
+```
+
+2. Clone the repository
+```bash
+git clone https://github.com/Debraj-Das/bash.git
+```
+
+3. add the following line to the .bashrc file
 ```bash
 # If not running interactively, don't do anything
 case $- in
@@ -39,3 +48,10 @@ if [ -f ~/.config/bash/input.conf ]; then
 	 bind -f ~/.config/bash/input.conf
 fi
 ```
+
+4. For add tmux configuration add the following line to the .tmux.conf file
+```bash
+if-shell "[[ -f ~/.config/bash/tmux/setup.conf ]]" "source-file ~/.config/bash/tmux/setup.conf"
+if-shell "[[ -f ~/.config/bash/tmux/theme.conf ]]" "source-file ~/.config/bash/tmux/theme.conf"
+```
+
