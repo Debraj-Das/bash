@@ -15,24 +15,14 @@ git clone https://github.com/Debraj-Das/bash.git
 3. add the following line to the .bashrc file
 
 ```bash
-# If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
-
-# Alias definitions.
-if [ -f ~/.config/bash/aliases.conf ]; then
-    . ~/.config/bash/aliases.conf
-fi
-
-# Load the prompt configuration
-if [ -f ~/.config/bash/prompt.conf ]; then
-	 . ~/.config/bash/prompt.conf
-fi
-
-## Load the input configuration
-if [ -f ~/.config/bash/input.conf ]; then
-	 bind -f ~/.config/bash/input.conf
+## Load the configuration
+if [ -f ~/.config/bash/bash.sh ]; then
+	 bind -f ~/.config/bash/bash.sh
 fi
 ```
+
+# Next I add install setting of system
+
+- fzf installations
+- nvim (lastest)
+- tmux
