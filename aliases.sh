@@ -40,13 +40,13 @@ alias vi='nvim '
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # competitive programming alias
-alias run="/home/debraj/cs/dsa/CPSetup/scripts/run.sh"
-alias ts="/home/debraj/cs/dsa/CPSetup/scripts/test.sh"
-alias ck="/home/debraj/cs/dsa/CPSetup/scripts/check.sh"
-alias it="/home/debraj/cs/dsa/CPSetup/scripts/interact.sh"
-alias cpt="/home/debraj/cs/dsa/CPSetup/scripts/ch_test.sh "
-alias cpd="cp ~/cs/dsa/CPSetup/test/* ."
-alias cps="python3 -u /home/debraj/cs/dsa/CPSetup/scripts/chp.py"
+# alias run="/home/debraj/cs/dsa/CPSetup/scripts/run.sh"
+# alias ts="/home/debraj/cs/dsa/CPSetup/scripts/test.sh"
+# alias ck="/home/debraj/cs/dsa/CPSetup/scripts/check.sh"
+# alias it="/home/debraj/cs/dsa/CPSetup/scripts/interact.sh"
+# alias cpt="/home/debraj/cs/dsa/CPSetup/scripts/ch_test.sh "
+# alias cpd="cp ~/cs/dsa/CPSetup/test/* ."
+# alias cps="python3 -u /home/debraj/cs/dsa/CPSetup/scripts/chp.py"
 
 
 alias ais='gh copilot suggest'
