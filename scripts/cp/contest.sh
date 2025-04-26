@@ -32,11 +32,14 @@ fi
 # Navigate to the directory.
 cd "$directory"
 
-# Check if the directory was changed successfully.
-if [ "$(pwd)" != "$(realpath "$directory")" ]; then
-  echo "Error: Failed to change to directory '$directory'." >&2
-  exit 1
-fi
+# pwd
+# echo "$(realpath "$directory")"
+
+# # Check if the directory was changed successfully.
+# if [ "$(pwd)" != "$(realpath "$directory")" ]; then
+#   echo "Error: Failed to change to directory '$directory'." >&2
+#   exit 1
+# fi
 
 # Check if the Python script exists.
 if [ ! -f "$PYTHON_SCRIPT" ]; then

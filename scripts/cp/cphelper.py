@@ -1,4 +1,5 @@
 import http.server
+from os.path import exists
 import socketserver
 import json
 import re
@@ -69,8 +70,12 @@ class MyHandler(http.server.BaseHTTPRequestHandler):
         match = re.search(r"/([^/]+)$", url)
         if match:
             file_name = match.group(1)
+            if len(file_name) > 1:
+                file_name = file_name[-1]
+
+            file_name = file_name.lower()
         else:
-            file_name = str(random.randint(1000, 100000000))
+            exit(1)
 
         # Ensure the file is created in the current directory.
         file_name = os.path.join(os.getcwd(), file_name)

@@ -17,4 +17,4 @@ if [ -f ~/.config/bash/input.sh ]; then
 	 bind -f ~/.config/bash/input.sh
 fi
 
- export PATH+="$PATH:~/.config/bash/scripts"
+ export PATH+="$PATH:~/.config/bash/scripts:~/.config/bash/scripts/cp/"

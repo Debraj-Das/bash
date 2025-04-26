@@ -30,8 +30,8 @@ alias lf="ls -l | grep -E -v '^d'" # files only
 alias ld="ls -l | grep -E '^d'"  # directories only
 
 alias ref='source ~/.bashrc'
-alias brc='vi ~/.bashrc'
 alias als='vi ~/.config/bash/aliases.sh'
+alias brc='vi ~/.config/bash/bash.sh'
 
 alias gpp='g++ -std=c++17 -Wshadow -Wall '
 alias vi='nvim '
