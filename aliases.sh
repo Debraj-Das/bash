@@ -31,7 +31,7 @@ alias ld="ls -l | grep -E '^d'"  # directories only
 
 alias ref='source ~/.bashrc'
 alias brc='vi ~/.bashrc'
-alias als='vi ~/.config/bash/aliases.conf'
+alias als='vi ~/.config/bash/aliases.sh'
 
 alias gpp='g++ -std=c++17 -Wshadow -Wall '
 alias vi='nvim '
