@@ -19,6 +19,7 @@ INPUT_FILE="in.txt"
 OUTPUT_FILE="out.txt"
 EXPECTED_OUTPUT_FILE="exp.txt"
 FAILURE_LOG="failed.log" # Log failed test case details to a file.
+Max_time=0
 
 # Function to compile a C++ file.
 # Arguments:
@@ -46,11 +47,18 @@ run_test_case() {
     exit 1 # Exit, because the rest of the test case cannot proceed.
   }
 
+  start=$(date +%s%N)
   # Run the solution.
   ./"$SOLUTION_EXE" < "$INPUT_FILE" > "$OUTPUT_FILE" || {
     echo "ERROR: Solution failed on test case $test_case_number. Exiting."
     exit 1
   }
+
+  end=$(date +%s%N)
+  time_taken=$(($(($end-$start))/1000000))
+  if [[ $Max_time -lt $time_taken ]]; then
+	  Max_time=$time_taken
+  fi
 
   # Run the brute force solution.
   ./"$BRUTE_EXE" < "$INPUT_FILE" > "$EXPECTED_OUTPUT_FILE" || {
@@ -117,8 +125,9 @@ for ((i = 1; i <= NUM_TEST_CASES; ++i)); do
 done
 
 # Clean up executables and temporary files.
-echo "Cleaning up..."
 rm -f "$SOLUTION_EXE" "$BRUTE_EXE" "$GENERATOR_EXE" "$INPUT_FILE" "$OUTPUT_FILE" "$EXPECTED_OUTPUT_FILE"
 
-echo "Testing complete."
+echo -e "😊😊😊 Max time: $Max_time ms"
+echo "Testing complete. 😊😊😊"
+
 exit 0
