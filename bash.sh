@@ -16,13 +16,11 @@ if [ -f ~/.config/bash/input.sh ]; then
 	bind -f ~/.config/bash/input.sh
 fi
 
-modules_dir=~/.config/bash/modules/
-# Check if the directory exists
-if [ ! -d "$modules_dir" ]; then
-	exit 0
-fi
+readonly modules_dir=~/.config/bash/modules/
 
-find "$modules_dir" -type f -name "*.sh" -print0 | while IFS= read -r -d $'\0' file; do
-	absolute_path=$(realpath "$file")
-	source $absolute_path
-done
+if [ -d "$modules_dir" ]; then
+	while IFS= read -r -d '' file; do
+		absolute_path=$(realpath "$file")
+		source $absolute_path
+	done < <(find "$modules_dir" -type f -name "*.sh" -print0)
+fi
