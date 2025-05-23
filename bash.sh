@@ -11,6 +11,11 @@ if [ -f ~/.config/bash/prompt.sh ]; then
 	. ~/.config/bash/prompt.sh
 fi
 
+# Load the path
+if [ -f ~/.config/bash/path.sh ]; then
+	. ~/.config/bash/path.sh
+fi
+
 ## Load the input configuration and bind -f is Readine keybindings
 if [ -f ~/.config/bash/input.sh ]; then
 	bind -f ~/.config/bash/input.sh
