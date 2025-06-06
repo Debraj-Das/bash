@@ -1,12 +1,8 @@
 import http.server
-from os.path import exists
-import socketserver
 import json
-import re
 import os
-import random
-
-# from urllib.parse import urlparse, parse_qs
+import re
+import socketserver
 
 
 class MyHandler(http.server.BaseHTTPRequestHandler):
