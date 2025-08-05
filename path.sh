@@ -1,1 +1,1 @@
-export PATH="~/.config/bash/scripts/:~/.config/bash/scripts/cp/:$PATH"
+export PATH="~/.config/bash/scripts/:~/.config/bash/scripts/cp/:~/.local/bin/:$PATH"
