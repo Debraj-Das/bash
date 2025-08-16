@@ -21,11 +21,11 @@ if [ -f ~/.config/bash/input.sh ]; then
 	bind -f ~/.config/bash/input.sh
 fi
 
-readonly modules_dir_user=~/.config/bash/modules/
+# modules_dir_user=~/.config/bash/modules/
 
-if [ -d "$modules_dir_user" ]; then
+if [ -d "~/.config/bash/modules/" ]; then
 	while IFS= read -r -d '' file; do
 		absolute_path=$(realpath "$file")
 		source $absolute_path
-	done < <(find "$modules_dir_user" -type f -name "*.sh" -print0)
+	done < <(find "~/.config/bash/modules/" -type f -name "*.sh" -print0)
 fi
