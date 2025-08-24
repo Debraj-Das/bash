@@ -16,16 +16,12 @@ if [ -f ~/.config/bash/path.sh ]; then
 	. ~/.config/bash/path.sh
 fi
 
-## Load the input configuration and bind -f is Readine keybindings
+# Load the input configuration and bind -f is Readine keybindings
 if [ -f ~/.config/bash/input.sh ]; then
 	bind -f ~/.config/bash/input.sh
 fi
 
-# modules_dir_user=~/.config/bash/modules/
-
-if [ -d "~/.config/bash/modules/" ]; then
-	while IFS= read -r -d '' file; do
-		absolute_path=$(realpath "$file")
-		source $absolute_path
-	done < <(find "~/.config/bash/modules/" -type f -name "*.sh" -print0)
+# Loading the use full functions
+if [ -f ~/.config/bash/functions.sh ]; then
+	. ~/.config/bash/functions.sh
 fi
